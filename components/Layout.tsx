@@ -13,6 +13,7 @@ const Layout: React.FC<Props> = ({ children }) => {
       <main className="flex shrink-0 grow flex-col p-4 sm:p-6 md:p-8">
         {children}
       </main>
+
       <Footer />
     </div>
   )

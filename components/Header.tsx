@@ -1,33 +1,49 @@
-import Link from './ActiveLink'
+// import Link from './ActiveLink'
+import { Box, Toolbar, Typography, CardMedia, Link } from '@mui/material';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import { NavLink } from './ActiveLink';
 
 const Header: React.FC = () => {
   return (
-    <header className="border-b border-gray-200 px-4">
-      <nav>
-        <style jsx>{`
-          a {
-            @apply text-gray-500 inline-block hover:text-black;
-            padding: 1em 0.1em 0.75em;
-          }
+    <Box sx={{ flexGrow: 1, backgroundColor: "#0e2a47", height: 55 }}>
+      <Toolbar component="nav">
+        <Typography
+          variant="h6"
+          component="div"
+          color={'#fff'}
+          sx={{ flexGrow: 1 }}
+        >
+          ODC
+        </Typography>
+        <Box sx={{ m: 1 }}>
 
-          .active {
-            @apply text-black border-b-2 border-solid border-black;
-          }
-        `}</style>
-        <ul className="flex justify-center gap-8">
-          <li>
-            <Link href="/">
-              <a>Home</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/about/">
-              <a>About</a>
-            </Link>
-          </li>
-        </ul>
-      </nav>
-    </header>
+          <NavLink href={'/'} sx={{ cursor: 'pointer' }}>
+            Home
+          </NavLink>
+
+        </Box>
+        <Box sx={{ m: 1 }}>
+          <NavLink href='/Blog/' sx={{ cursor: 'pointer' }}>
+            Blog
+          </NavLink>
+
+        </Box>
+        <Box sx={{ m: 1 }}>
+          <Link href='https://github.com/OpenDataforWeb3' sx={{ color: '#fff' }}>
+            <GitHubIcon />
+          </Link>
+
+        </Box>
+        <Box sx={{ m: 1 }}>
+          <Link href='https://twitter.com/OpenDataforWeb3' color={'#fff'}>
+            <TwitterIcon />
+          </Link>
+
+        </Box>
+
+      </Toolbar>
+    </Box>
   )
 }
 
